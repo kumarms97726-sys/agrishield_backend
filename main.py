@@ -1,34 +1,30 @@
 from fastapi import FastAPI, File, UploadFile
-from fastapi.responses import JSONResponse, HTMLResponse
+from fastapi.responses import JSONResponse
 from PIL import Image
 import io
 import hashlib
 from datetime import datetime
-from database import create_tables, log_diagnosis,log_mrl
-from mrl_engine import calculate_residue, calculate_safe_harvest_time
 
+from database import create_tables, log_diagnosis, log_mrl
+from mrl_engine import calculate_residue, calculate_safe_harvest_time
 from diagnose import predict, generate_heatmap
 from drone.drone_analyze import analyze_drone_image
+
 app = FastAPI(title="Plant Disease Diagnose")
 create_tables()
 
-@app.get("/", response_class=HTMLResponse)
+
+@app.get("/")
 def home():
-    return """
-    <html>
-        <head>
-            <title>AgriShield</title>
-        </head>
-        <body style="font-family: Arial; text-align: center; padding: 80px;">
-            <h1>🌱 AgriShield</h1>
-            <h2>Plant Disease Diagnosis</h2>
-            <p>✅ Backend is running successfully</p>
-            <p>MobileNetV2 + Grad-CAM</p>
-            <br>
-            <a href="/docs">Open API Testing</a>
-        </body>
-    </html>
-    """
+    return {
+        "status": "Backend is running",
+        "project": "AgriShield",
+        "apis": {
+            "plant_diagnosis": "/diagnose",
+            "mrl_check": "/mrl-check",
+            "drone_analysis": "/drone-analyze"
+        }
+    }
 
 
 @app.post("/diagnose")

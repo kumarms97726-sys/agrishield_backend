@@ -1,0 +1,7 @@
+dataset,role,environment,status
+PlantVillage,foundation,controlled,available
+PlantDoc,real_world,in_the_wild,planned
+Plant_Pathology_2020,real_world,field,planned
+Cassava,real_world,field,planned
+PlantifyDr,additional,mixed,planned
+SAGE,additional,mixed,planned

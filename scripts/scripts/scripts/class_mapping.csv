@@ -1,0 +1,8 @@
+source_class,agrishield_class,source,status
+Apple___Apple_scab,Apple___Apple_scab,PlantVillage,verified
+Apple___Black_rot,Apple___Black_rot,PlantVillage,verified
+Apple___Cedar_apple_rust,Apple___Cedar_apple_rust,PlantVillage,verified
+Apple___healthy,Apple___healthy,PlantVillage,verified
+Blueberry___healthy,Blueberry___healthy,PlantVillage,verified
+Cherry_(including_sour)___Powdery_mildew,Cherry___Powdery_mildew,PlantVillage,verified
+Cherry_(including_sour)___healthy,Cherry___healthy,PlantVillage,verifiedgit clone --no-checkout https://github.com/pratikkayal/PlantDoc-Dataset.git data\raw\plantdoc
